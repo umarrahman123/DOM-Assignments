@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Review</title>
+    <!-- css Section -->
+    <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #9885ed;
+    }
+    #profile-container {
+        text-align: center;
+        border: 10px solid black;
+        border-radius: 20px;
+        width: 80%;
+        height: 80%;
+        background-color:hotpink ;
+        padding: 50px 10px 0px 10px;
+    }
+    #profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    #profile-name {
+        font-weight: bold;
+    }
+    #profile-designation {
+        font-weight: bold;
+        color: #666;
+    }
+    #profile-description {
+        margin-top: 20px;
+    }
+    #Buttons-changer {
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+    }
+    h1{
+      display: flex;
+      position: absolute;
+      margin-top: -500px;
+    
+      align-items: center;
+      text-align: center;
+      color: #007bff;
+    }
+    </style>
+</head>
+<!-- Body HTML -->
+<body>
+  <h1>Our Review</h1>
+  <div id="profile-container">
+    <img id="profile-img" src="./assets/umar.png" alt="profile image">
+    <div id="profile-name"></div>
+    <div id="profile-designation">Designation: Web Developer</div>
+    <div id="profile-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lobortis, urna at laoreet posuere, dui neque condimentum odio, ut lobortis eros ligula a mauris.</p>
+    </div>
+    <div id="Buttons-changer">
+      <button onclick="previousProfile()">Previous</button>
+      <button onclick="showResetProfile()">reset</button>
+      <button onclick="nextProfile()">Next</button>
+  </div>
+  </div>
+<!-- java-scriopt Section-->
+  <script>
+    const reviews = [
+  {
+    name: "Umar Rahman",
+    imgSrc: "./assets/umar.png",
+    designation: "Web Developer",
+    description: "I am a web developer and I am a student of Smit.I am a Mobile App Developer and student of Smit.I am a Mobile App Developer and student of Smit.",
+    // profilePicture: "./assets/p1.jfif",
+    
+  },
+  {
+    name: "Saad smit",
+    imgSrc: "./assets/p2.jfif",
+    designation: "Software Engineer",
+    description: "Passionate about creating innovative software solutions.",
+    // profilePicture: "./assets/p2.jfif",
+  },
+  {
+    name: "Hassnain smit",
+    imgSrc: "./assets/p3.jfif",
+    designation: "App Engineer",
+    description: "I am a Mobile App Developer and student of Smit.I am a Mobile App Developer and student of Smit.I am a Mobile App Developer and student of Smit.",
+    // profilePicture: "path/to/profile/picture2.jpg"
+  },
+  {
+    name: "Zahid smit",
+    imgSrc: "./assets/p4.png",
+    designation: "Software Engineer",
+    description: "Passionate about creating innovative software solutions.",
+    // profilePicture: "path/to/profile/picture2.jpg"
+  },
+  {
+    name: "Ali smit",
+    imgSrc: "./assets/p5.jfif",
+    designation: "Mobile App Engineer",
+    description: "I am a Mobile App Developer and student of Smit.I am a Mobile App Developer and student of Smit.I am a Mobile App Developer and student of Smit.",
+    // profilePicture: "path/to/profile/picture2.jpg"
+  },
+  // Add more reviews as needed
+];
+
+let currentReviewIndex = 0;
+
+function displayReview(index) {
+  const review = reviews[index];
+  document.getElementById("profile-img").src = review.imgSrc;
+  document.getElementById("profile-name").innerHTML = review.name;
+  document.getElementById("profile-designation").innerText = review.designation;
+  document.getElementById("profile-description").innerHTML = review.description;
+}
+
+function previousProfile() {
+  currentReviewIndex = (currentReviewIndex - 1 + reviews.length) % reviews.length;
+  displayReview(currentReviewIndex);
+}
+
+function showResetProfile() {
+  currentReviewIndex = 0;
+  displayReview(currentReviewIndex);
+}
+
+function nextProfile() {
+  currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+  displayReview(currentReviewIndex);
+  
+}
+
+// Initial display
+displayReview(currentReviewIndex);
+
+// Event listeners for buttons
+document.getElementById("next-btn").addEventListener("click", nextReview);
+document.getElementById("back-btn").addEventListener("click", previousReview);
+document.getElementById("reset-btn").addEventListener("click", resetReview);
+
+  </script>
+      <script src="Review2.js"></script>
+</body>
+</html> 

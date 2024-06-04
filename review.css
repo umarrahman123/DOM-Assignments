@@ -1,0 +1,16 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: gainsboro;
+}
+#container{
+    background-color: white;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+}
+img {
+    border-radius: 50%;
+  }
+  
