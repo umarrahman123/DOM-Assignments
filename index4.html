@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toggle Navbar 2</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- <><><><><><>< CSS Section <><><><><><><><><><><><> -->
+<style>
+    /* Reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Navbar styles */
+    .navbar {
+        /* background-color: #bcb9b9; */
+  padding: 10px 0;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo img {
+    height: 50px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-menu li {
+    margin-right: 20px;
+}
+
+.navbar-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    color: black;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    height: 30px;
+}
+
+/* Toggle Button styles */
+.navbar-toggle {
+    cursor: pointer;
+}
+
+.toggle-icon {
+    
+    width: 50px;
+    height: 20px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+/* Media Query for responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #cced68;
+    text-align: center;
+    color: rgb(235, 31, 31);
+  }
+  .navbar-menu li {
+      margin: 10px 0;
+      color: white;
+  }
+  .navbar-menu li a{
+      color: white;
+  }
+  .navbar-toggle {
+      display: block;   /*show the navebar butn*/
+  }
+ 
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-toggle {
+        display: none;
+    }
+}
+</style>
+</head>
+<!-- <><><><><><>< HTML  Section <><><><><><><><><><><><> -->
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-logo">
+                <a href="#"><img src="./assets/logo1.jfif" alt="Logo"></a>
+    </div>
+    <div class="navbar-toggle" onclick="toggleMenu()">
+      <div class="fas fa-bars"></div>
+    </div>
+    <ul class="navbar-menu" id="navbarMenu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#"><img src="./assets/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="./assets/twitter.jfif" alt="Twitter"></a>
+      <a href="#"><img src="./assets/linkedin.png" alt="LinkedIn"></a>
+      <a href="#"><img src="./assets/be.png" alt="Behance"></a>
+      <a href="#"><img src="./assets/dimond.png" alt="Diamond"></a>
+    </div>
+  </div>
+</nav>
+
+
+</body>
+<!-- <><><><><><>< java  Section <><><><><><><><><><><><> -->
+<script>
+    function toggleMenu() {
+  var navbarMenu = document.getElementById("navbarMenu");
+  if (navbarMenu.style.display === "block") {
+    navbarMenu.style.display = "none";
+  } else {
+    navbarMenu.style.display = "block";
+  }
+}
+
+</script>
+</html>
